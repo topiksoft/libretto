@@ -44,7 +44,6 @@
 	}
 
 	h1,h2,h3,h4 {color: #E28F12;}
-	//em {color: green;}
 	h2 {font-variant-caps: small-caps;}
 
 	.card {
@@ -54,15 +53,15 @@
 	}
 
 	.form-control:focus {
-			border-color: #667eea;
-			box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+			border-color: #E28F12;
+			box-shadow: 0 0 0 0.25rem rgba(226, 143, 18, 0.25);
 	}
 
 	.btn-submit {
 <!--
 			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 -->
-			background: linear-gradient(135deg, #E28F12 0%, #764ba2 100%);
+			background: linear-gradient(135deg, #E28F12 0%, #B5710A 100%);
 			border: none;
 			font-weight: 600;
 			transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -70,7 +69,7 @@
 
 	.btn-submit:hover:not(:disabled) {
 			transform: translateY(-2px);
-			box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+			box-shadow: 0 5px 20px rgba(226, 143, 18, 0.4);
 	}
 
 	.btn-submit:active {
@@ -302,12 +301,13 @@
 					<p class="text-muted small mb-4">Az e-mail cím különösen fontos, különben nem tudunk Önnek írni. A címét másra nem használjuk és az érdeklődés természetesen kötelezettségmentes.</p>
 
 					<form id='librettoform' action='https://konyvkiadasa.hu/forms/libretto_processor.php' method='POST'>
-							
+
+							<div class="mb-4">
 									<label for="name" class="form-label fw-medium">Név <span class="text-danger">*</span></label>
 									<input type="text" class="form-control" id="name" name="name" required placeholder="Az Ön neve">
 							</div>
 
-							
+							<div class="mb-4">
 									<label for="email" class="form-label fw-medium">Email cím <span class="text-danger">*</span></label>
 									<input type="email" class="form-control" id="email" name="email" required placeholder="pl. kovacs@gmail.com">
 							</div>
@@ -317,13 +317,9 @@
 									<textarea class="form-control" id="message" name="message" required placeholder="Milyen szolgáltatás iránt érdeklődik?" rows="4" style="resize: vertical;"></textarea>
 							</div>
 
-							<div class="row mb-4">
-								<div class="col-lg-6">
-									<label for="antispam">Ugye Ön nem robot? Mennyi öt meg öt? (számmal)</label>
-								</div>
-								<div class="col-lg-6">
-									<input type="text" id="antispam" name="antispam" placeholder="Mennyi öt+öt? (antispam)">
-								</div>
+							<div class="mb-4">
+									<label for="antispam" class="form-label fw-medium">Ugye Ön nem robot? Mennyi öt meg öt? (számmal) <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" id="antispam" name="antispam" required inputmode="numeric" placeholder="pl. 10">
 							</div>
 							
 							<button type="submit" class="btn btn-submit btn-warning w-100 py-2" id="submitBtn">
